@@ -12,10 +12,12 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/sass/app.scss', 'public/css')
     .scripts([
-        'resources/assets/js/libs/sweetalert-dev.js'
-    ], 'public/dist/sweetalert-dev.js')
+        'resources/assets/js/libs/sweetalert-dev.js',
+        'resources/assets/js/libs/lity.js',
+    ], 'public/dist/libs.js')
     .styles([
-        'resources/assets/css/libs/sweetalert.css'
-    ], 'public/dist/sweetalert.css');
+        'resources/assets/css/libs/sweetalert.css',
+        'resources/assets/css/libs/lity.css'
+    ], 'public/dist/libs.css');

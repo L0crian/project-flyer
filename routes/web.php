@@ -11,8 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', 'PagesController@home');
 
 Route::resource('flyers', 'FlyersController');
+
+Route::get('{zip}/{street}', 'FlyersController@show');
+
+Route::post('{zip}/{street}/photos', ['as' => 'store_photo_path', 'uses' => 'PhotosController@Store']);
+
+Route::delete('photos/{id}', 'PhotosController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
